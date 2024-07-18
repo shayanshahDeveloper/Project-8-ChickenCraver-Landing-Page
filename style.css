@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #281300;
+  --color: #da8121;
+}
+
+.food {
+  margin-right: 100px;
+  position: absolute;
+  width: 480px;
+  right: 0;
+  pointer-events: none;
+  filter: drop-shadow(0px 0px 15px var(--color));
+  animation: loadAnimation_img 1s ease forwards;
+  animation-delay: 0.8s;
+  transform: translateX(200%);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+header {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  padding: 30px 100px;
+}
+
+header h1 {
+  animation: loadAnimation 1s ease forwards;
+  transform: scale(0);
+}
+
+header nav {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  animation: loadAnimation 1s ease forwards;
+  transform: scale(0);
+}
+
+header nav a::before {
+  content: "";
+  width: 0%;
+  height: 2.5px;
+  position: absolute;
+  bottom: -5px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+header nav a:hover::before,
+header nav .active::before {
+  width: 70%;
+}
+.text-box {
+  color: white;
+  width: 45%;
+  z-index: 99;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: start;
+}
+
+.text-box h1 {
+  font-weight: 900;
+  font-size: 70px;
+  animation: loadAnimation 1s ease forwards;
+  transform: scale(0);
+}
+
+.text-box h1:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.text-box h1:nth-child(2) {
+  color: var(--color);
+  animation-delay: 0.4s;
+}
+
+.text-box p {
+  margin: 15px 0px;
+  animation: loadAnimation 1s ease forwards;
+  transform: scale(0);
+  animation-delay: 0.6s;
+}
+
+.text-box .button {
+  color: white;
+  width: 185px;
+  height: 45px;
+  border: 2px soild var(--color);
+  background-color: var(--color);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+  margin-top: 20px;
+  box-shadow: 0px 0px 15px var(--color);
+  animation: loadAnimation 1s ease forwards;
+  transform: scale(0);
+  animation-delay: 0.8s;
+  outline: none;
+  border: 0;
+}
+
+.text-box .button:hover {
+  box-shadow: 0px 0px 0px;
+}
+
+@keyframes loadAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loadAnimation_img {
+  0% {
+    transform: translateX(100%);
+  }
+  80% {
+    transform: translateX(-3%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
